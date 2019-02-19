@@ -17,11 +17,16 @@ n = random.randint(1,9)
 print("Well, Hello There! Welcome to Guessing Number Quiz!" + "\n")
 
 #2. Store a random number as the answer/solution.
-answer= int(input("Guess the number! Oh and please only type numeric value!>>   "))
+answer= int(input("Guess the number! Oh and please only type numeric value from 1-9!>>   "))
 
 attempt_count = 1
 
 def start_game():
+    try:
+        answer= int(input("Guess the number! Oh and please only type numeric value from 1-9!>>   "))
+    except ValueError:
+        print("it's not a valid number, please try again.")
+        
     """Psuedo-code Hints
     
     When the program starts, we want to:
@@ -39,7 +44,7 @@ def start_game():
     ( You can add more features/enhancements if you'd like to. )
     """
     # write your code inside this function.
-    
+
 while n != answer:
     if answer > n:
         print("It's lower")
